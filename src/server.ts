@@ -1,4 +1,4 @@
-import express, { urlencoded } from 'express';
+import express from 'express';
 import dotenv from 'dotenv';
 import mustache from 'mustache-express';
 import path from 'path';
@@ -11,12 +11,12 @@ const server = express();
 // SET
 server.set('view engine', 'mustache');
 server.set('views', path.join(__dirname, 'views'));
-server.set('mustache', mustache());
+server.engine('mustache', mustache());
 
 // USE
 server.use(express.static(path.join(__dirname, '../public')));
-server.use(express.json());
-server.use(urlencoded({ extended: true }));
+// server.use(express.json());
+// server.use(urlencoded({ extended: true }));
 
 // ROTAS
 server.use(mainRoutes);

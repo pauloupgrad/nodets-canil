@@ -76,11 +76,15 @@ ul li:hover a {
     margin-bottom: 30px;
 }
 
-h2 {
+h2,h1 {
     color: var(--main);
     font-size: 24px;
     font-weight: bold;
     text-align: center;
+}
+h1{
+    color: red;
+    font-size: 30px;
 }
 
 .no-list {
